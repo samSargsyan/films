@@ -28,21 +28,21 @@ const Header = () => {
     <OutsideClickHandler onOutsideClick={() =>{setToggle(false);setIsOpen(false)}}>
       <section className="top-nav header">
         <div>
-          <Link to="/popular" onClick={()=>setToggle(false)}><img src={Logo} alt="Logo" /></Link>
+          <Link to="films/popular" onClick={()=>setToggle(false)}><img src={Logo} alt="Logo" /></Link>
         </div>
         <input id="menu-toggle" type="checkbox" checked={toggle} onClick={menuToggle} />
         <label className='menu-button-container' htmlFor="menu-toggle">
           <div className='menu-button'></div>
         </label>
         <ul className="menu">
-          <li><Link to="/popular" onClick={()=>setToggle(false)}>Home</Link></li>
+          <li><Link to="films/popular" onClick={()=>setToggle(false)}>Home</Link></li>
           <li className='menuTitle' onClick={()=>setIsOpen(prev=>!prev)}>Categories</li>
           {isOpen ? 
           <ul className='dropdownMenu'>
-            <li onClick={() => setValue('now_playing')}><Link to="/now_playing" onClick={()=>menuToggle()}>Now Playing</Link></li>
-            <li onClick={() => setValue('popular')}><Link to="/popular" onClick={()=>menuToggle()}>Popular</Link></li>
-            <li onClick={() => setValue('top_rated')}><Link to="/top_rated" onClick={()=>menuToggle()}>Top Rated</Link></li>
-            <li onClick={() => setValue('upcoming')}><Link to="/upcoming" onClick={()=>menuToggle()}>Upcoming</Link></li>
+            <li onClick={() => setValue('now_playing')}><Link to="films/now_playing" onClick={()=>menuToggle()}>Now Playing</Link></li>
+            <li onClick={() => setValue('popular')}><Link to="films/popular" onClick={()=>menuToggle()}>Popular</Link></li>
+            <li onClick={() => setValue('top_rated')}><Link to="films/top_rated" onClick={()=>menuToggle()}>Top Rated</Link></li>
+            <li onClick={() => setValue('upcoming')}><Link to="films/upcoming" onClick={()=>menuToggle()}>Upcoming</Link></li>
           </ul>
           :
           ''
